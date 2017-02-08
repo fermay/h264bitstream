@@ -1,5 +1,8 @@
 h264bitstream
 =============
+Add slice_layer_extension_rbsp( ) parser , subset_seq_parameter_set_rbsp( ) parser and profile_idc == 83 etc based on http://www.itu.int/rec/T-REC-H.264-201304-S/en
+
+Notice: the program correctness need Test and verify !!
 
 A library to read and write H.264 video bitstreams, in particular to examine or modify headers.
 
