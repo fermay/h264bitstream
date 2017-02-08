@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "h264bitstreamlib", "h264bitstreamlib.vcxproj", "{599CB145-6111-4154-98AC-49AE659F68DE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "h264_analyzer", "h264_analyzer.vcxproj", "{4E5BB14A-4A05-43A1-8833-5B72D78C345E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{599CB145-6111-4154-98AC-49AE659F68DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{599CB145-6111-4154-98AC-49AE659F68DE}.Debug|Win32.Build.0 = Debug|Win32
+		{599CB145-6111-4154-98AC-49AE659F68DE}.Release|Win32.ActiveCfg = Release|Win32
+		{599CB145-6111-4154-98AC-49AE659F68DE}.Release|Win32.Build.0 = Release|Win32
+		{4E5BB14A-4A05-43A1-8833-5B72D78C345E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4E5BB14A-4A05-43A1-8833-5B72D78C345E}.Debug|Win32.Build.0 = Debug|Win32
+		{4E5BB14A-4A05-43A1-8833-5B72D78C345E}.Release|Win32.ActiveCfg = Release|Win32
+		{4E5BB14A-4A05-43A1-8833-5B72D78C345E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
