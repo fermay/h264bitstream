@@ -25,10 +25,6 @@
 #ifndef _H264_SEI_H
 #define _H264_SEI_H        1
 
-#include <stdint.h>
-
-#include "bs.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,8 +36,8 @@ typedef struct
     uint8_t* payload;
 } sei_t;
 
-sei_t* sei_new();
-void sei_free(sei_t* s);
+sei_t* h264_sei_new();
+void h264_sei_free(sei_t* s);
 
 //D.1 SEI payload syntax
 #define SEI_TYPE_BUFFERING_PERIOD 0

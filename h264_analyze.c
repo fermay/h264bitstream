@@ -45,9 +45,9 @@ static struct option long_options[] =
 #endif
 
 static char options[] =
-"\t-o output_file, defaults to test.264\n"
-"\t-v verbose_level, print more info\n"
-"\t-p print codec for HTML5 video tag's codecs parameter, per RFC6381\n"
+"\t-o output file, defaults to test.264\n"
+"\t-p print information regarding this stream\n"
+"\t-v print more info\n"
 "\t-h print this message and exit\n";
 
 void usage( )
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     extern char* optarg;
     extern int   optind;
 
-    while ( ( c = getopt_long( argc, argv, "o:phv:", long_options, &long_options_index) ) != -1 )
+    while ( ( c = getopt_long( argc, argv, "o:p:hv", long_options, &long_options_index) ) != -1 )
     {
         switch ( c )
         {
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 
         sz += rsz;
 
-        while (find_nal_unit(p, sz, &nal_start, &nal_end) > 0)
+        while (h264_find_nal_unit(p, sz, &nal_start, &nal_end) > 0)
         {
             if ( opt_verbose > 0 )
             {
@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
             }
 
             p += nal_start;
-            read_debug_nal_unit(h, p, nal_end - nal_start);
+            h264_read_nal_unit(h, p, nal_end - nal_start);
 
             if ( opt_probe && h->nal->nal_unit_type == NAL_UNIT_TYPE_SPS )
             {
@@ -163,10 +163,10 @@ int main(int argc, char *argv[])
 
             if ( opt_verbose > 0 )
             {
-                // fprintf( h264_dbgfile, "XX ");
-                // debug_bytes(p-4, nal_end - nal_start + 4 >= 16 ? 16: nal_end - nal_start + 4);
+                fprintf( h264_dbgfile, "XX ");
+                h264_debug_bytes(p-4, nal_end - nal_start + 4 >= 16 ? 16: nal_end - nal_start + 4);
 
-                // debug_nal(h, h->nal);
+                h264_debug_nal(h, h->nal);
             }
 
             p += (nal_end - nal_start);

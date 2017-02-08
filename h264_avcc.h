@@ -1,9 +1,6 @@
 #ifndef _H264_AVCC_H
 #define _H264_AVCC_H        1
 
-#include <stdint.h>
-#include <assert.h>
-
 #include "bs.h"
 #include "h264_stream.h"
 
@@ -31,11 +28,11 @@ typedef struct
   pps_t** pps_table;
 } avcc_t;
 
-avcc_t* avcc_new();
-void avcc_free(avcc_t* avcc);
-int read_avcc(avcc_t* avcc, h264_stream_t* h, bs_t* b);
-int write_avcc(avcc_t* avcc, h264_stream_t* h, bs_t* b);
-void debug_avcc(avcc_t* avcc);
+avcc_t* h264_avcc_new();
+void h264_avcc_free(avcc_t* avcc);
+int h264_read_avcc(avcc_t* avcc, h264_stream_t* h, bs_t* b);
+int h264_write_avcc(avcc_t* avcc, h264_stream_t* h, bs_t* b);
+void h264_debug_avcc(avcc_t* avcc);
 
 #ifdef __cplusplus
 }
